@@ -1,0 +1,92 @@
+even.target obtenemos el elemento que ha generado el evento.
+
+La propiedad target hace referencia (o apunta) al objeto en el cual se lanzo un evento.
+
+target, es una propiedad de un evento que es una referencia al elemento sobre el que se disparó el evento. Así como 'objetivo' significa
+'apuntar a algo', se usa para 'apuntar' a ese elemento en particular.
+
+Esta propiedad nos da acceso a las propiedades de ese elemento.
+
+Dado que la propiedad de destino nos ha dado acceso al elemento, podemos leer algunas de las propiedades (que son los atributos) y también
+mostrarlas en otro lugar.
+
+NOTA: Tenga en cuenta que esta propiedad es diferente de currentTarget. currentTargetdevuelve una referencia al objeto real que activó el
+evento, mientras que targetdevuelve una referencia al objeto sobre el que se activó el evento, independientemente del elemento que escuchó el
+evento.
+
+
+EVENT.TARGETCASOS CASOS DE USO
+
+
+1. OBTENER PROPIEDADES
+El caso de uso más común es en elementos de entrada. Por ejemplo, un changeevento se escucha en un campo de entrada. Este evento se activa una
+vez que hay un cambio en el contenido de esa entrada (que podría ser un cambio en el valor). El valor de la entrada podría transformarse o
+mostrarse en otro lugar.
+
+Echa un vistazo a este bolígrafo: un programa simple que muestra el valor a medida que cambia.
+
+HTML
+<div id='container'>
+    <input id='input' class='paragraph'>
+	<p>After typing, click outside the input to see the changes</p>
+	<h1 id='info'></h1>
+</div>
+
+<script>
+
+</script>
+
+
+JAVASCRIPT
+let input = document.querySelector('#input');
+let info = document.querySelector('#info');
+
+function eventController(event) {
+   info.innerHTML = event.target.value;
+}
+
+input.addEventListener('change', eventController, false)
+
+ANALICEMOS EL CÓDIGO ANTEIOR.
+
+- La razón por la que agregué el detector de eventos a la entrada en lugar del contenedor es que no quiero escuchar todos los eventos de
+cambio en el contenedor. Otros eventos de cambio podrían ocurrir en él, como selectetiquetas o textarea. Por lo tanto, escuché solo cambiar
+eventos en la etiqueta de entrada.
+
+- Establecí referencias variables a la etiqueta de entrada y la etiqueta h1 inicialmente vacía.
+- Escuché cada evento de cambio en la entrada y apliqué una función que establece el valor de la entrada al contenido de la etiqueta h1.
+- Usé la target propiedad para orientar la entrada.
+
+
+2. ESTABLECER PROPIEDADES
+También puede usar la propiedad para establecer los atributos de un elemento. Por ejemplo, el atributo de clase. Digamos que tiene un atributo
+de clase de 'rojo' que cambia el color del texto de los elementos a rojo, podría tener esto:
+
+<style>
+  .red {
+	  color: red;
+	}
+</style>
+
+<p id="toBeChanged">My color can change</p>
+
+<script>
+	function changeColorToRed(event) {
+	  event.target.className = "red"
+	};
+
+	let toBeChanged = document.querySelector("toBeChanged");
+
+	toBeChanged.addEventListener("click", changeColorToRed, false);
+</script>
+
+Si probó este código, notará que cuando hace clic en el párrafo, su color cambia a rojo.
+
+Hay otros casos de uso que podrían hacerse a partir de esta propiedad. A partir de los ejemplos anteriores que mostraron cómo obtener
+propiedades y establecer propiedades de elementos en los que se activaron eventos, creo que podrá crear aplicaciones más interactivas.
+
+
+
+CONCLUCIÓN
+La targetpropiedad de events nos permite acceder al elemento del cual se disparó el evento y sus respectivos atributos. Además, podemos
+obtener las propiedades o incluso configurarlas.

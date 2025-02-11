@@ -1,0 +1,30 @@
+El método filter() nos permite filtrar los elementos de un array y devolver un nuevo array con sólo los elementos que queramos.
+Para ello, utilizaremos la función callback para establecer una condición que devuelve true sólo en los elementos que nos interesen:
+
+const names = ["Ana", "Pablo", "Pedro", "Pancracio", "Heriberto"];
+const filteredNames = names.filter((name) => name.startsWith("P"));
+
+filteredNames; // Devuelve ['Pablo', 'Pedro', 'Pancracio']
+
+En este ejemplo, filtramos sólo los elementos en los que su primera letra sea P .startWith()
+Por lo tanto, la variable filteredNames será un array con sólo esos elementos.
+
+Ten en cuenta que si ningún elemento cumple la condición, filter() devuelve un array vacío.
+
+
+.startsWith("letra") para la primera letra.
+.endsWith("letra") para la ultima letra.
+
+
+Otro ejemplo:
+
+Devuelva solo los números del array years mayores a 1950.
+
+const years = [1763, 1972, 1925, 1916, 1984, 1124, 1950, 2020];
+
+function getYears(years) {
+  return years.filter(year => year > 1950);
+};
+
+console.log(getYears(years)); // Devuelve [1972, 1984, 2020]
+

@@ -1,0 +1,129 @@
+El método flatMap() mapea cada elemento en una matriz usando una función de mapeo y aplana el resultado en
+una nueva matriz.
+
+
+INTRODUCCIÓN AL MÉTODO FLATMAP() DE MATRIZ DE JAVASCRIPT
+El método flat() crea una nueva matriz con los elementos de los subarreglos concatenados en ella.
+
+El método map() crea una nueva matriz cuyos elementos son los resultados de una función de mapeo.
+
+El método flatMap() es la combinación del método map() seguido del método flat() de profundidad 1.
+
+El método flatMap() primero mapea cada elemento en una matriz usando una función de mapeo y luego aplana los
+resultados en una nueva matriz.
+
+A continuación se muestra la sintaxis del método flatMap():
+
+let newArray = arrayObject.flatMap(callback,thisArg);
+
+El método flatMap() toma dos parámetros:
+
+1) La función callback de mapeo
+La función callback de mapeo tiene la misma sintaxis que la del método map():
+function callback(currentValue [[,index], array]);
+
+2) El thisArgargumento
+El argumento thisArg opcional es un valor para usar this cuando se ejecuta el callback.
+
+Tenga en cuenta que el flatMap()método no modifica la matriz original.
+
+flatMap()Ejemplos de matriz de JavaScript
+Tomemos algunos ejemplos del uso del método flatMap().
+
+1) Ejemplo de creación de palabras a partir de oraciones
+Supongamos que tiene la siguiente matriz:
+
+let sentences = ["JavaScript Array flatMap()", " ", "is", " ", "Awesome"];
+
+La siguiente funcion map() divide las palabras de las oraciones:
+
+let words = sentences.map(s => s.split(' '));
+console.log(words);
+
+Salida:
+[
+    [ 'JavaScript', 'Array', 'flatMap()' ],
+    [ ' ' ],
+    [ 'is' ],
+    [ ' ' ],
+    [ 'Awesome' ]
+]
+
+El resultado es una matriz de matrices anidadas llenas de palabras. Para aplanar el resultado, puede usar el
+flat()método en el resultado del método map(). Sin embargo, será más conciso usar el método flatMap().
+
+El flatMap() crea una matriz aplanada ejecutando cada oración en la matriz a través de una función de mapeo
+y aplanando los resultados mapeados:
+
+let sentences = [
+    "JavaScript Array flatMap()",
+    " ",
+    "is",
+    " ",
+    "Awesome"
+];
+
+let words = sentences.flatMap(s => s.split(' '));
+console.log(words);
+
+Salida:
+
+[ 'JavaScript', 'Array', 'flatMap()', '', '', 'is', '', '', 'Awesome' ]
+Lenguaje de código:  JSON / JSON con comentarios  ( json )
+
+2) Agregar y eliminar elementos durante el ejemplo de mapeo
+El métodpflatMap() le permite agregar o eliminar elementos durante el mapeo. Considere el siguiente ejemplo:
+
+Suponga que tiene el siguiente carrito de compras:
+
+let cart = [{
+        name: 'Smartphone',
+        qty: 2,
+        price: 500,
+        freeOfCharge: false
+    },
+    {
+        name: 'Tablet',
+        qty: 1,
+        price: 800,
+        freeOfCharge: false
+    }
+];
+
+Si los clientes compran un teléfono inteligente, querrás darles un protector de pantalla gratis.
+
+Cuando el cliente agrega un teléfono inteligente al carrito, puede agregar un protector de pantalla al
+carrito utilizando el método flatMap() siguiente:
+
+let newCart = cart.flatMap(
+    (item) => {
+        if (item.name === 'Smartphone') {
+            return [item, {
+                name: 'Screen Protector',
+                qty: item.qty,
+                price: 5,
+                freeOfCharge: true
+            }]
+        } else {
+            return [item];
+        }
+    }
+);
+
+console.log(newCart);
+
+El carrito se verá así:
+[
+    { name: 'Smartphone', qty: 2, price: 500, freeOfCharge: false },
+    { name: 'Screen Protector', qty: 2, price: 5, freeOfCharge: true },
+    { name: 'Tablet', qty: 1, price: 800, freeOfCharge: false }
+]
+
+Salida:
+{ total: 1800 }
+
+
+RESUMEN
+- Utilice el método flatMap() para crear una matriz aplanada de elementos ejecutando cada elemento de la
+colección a través de una función de asignación y aplanando los resultados asignados.
+

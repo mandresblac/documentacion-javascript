@@ -1,0 +1,33 @@
+Métodos de redondeo 
+Como hemos visto anteriormente, es muy común necesitar métodos para redondear números y reducir el número de decimales o aproximar a una cifra concreta. Para ello, de forma nativa, Javascript proporciona los siguientes métodos de redondeo:
+
+Método	                             Descripción
+Math.round(x)	  Devuelve el redondeo de x (el entero más cercano)
+Math.ceil(x)	  Devuelve el redondeo superior de x. (el entero más alto)
+Math.floor(x)	  Devuelve el redondeo inferior de x. (el entero más bajo)
+Math.fround(x) 	  Devuelve el redondeo de x (flotante con precisión simple)
+Math.trunc(x) 	  Trunca el número x (devuelve sólo la parte entera)
+
+Veamos las diferencias de utilizar los diferentes métodos anteriores para redondear un número decimal y los resultados obtenidos:
+
+// Redondeo natural, el más cercano
+Math.round(3.75); // 4
+Math.round(3.25); // 3
+
+// Redondeo superior (el más alto)
+Math.ceil(3.75); // 4
+Math.ceil(3.25); // 4
+
+// Redondeo inferior (el más bajo)
+Math.floor(3.75); // 3
+Math.floor(3.25); // 3
+
+// Redondeo con precisión
+Math.round(3.123456789); // 3
+Math.fround(3.123456789); // 3.1234567165374756
+
+// Truncado (sólo parte entera)
+Math.trunc(3.75); // 3
+Math.round(-3.75); // -4
+Math.trunc(-3.75); // -3
+

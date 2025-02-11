@@ -1,0 +1,8 @@
+function retornarMinimo(x, y){
+  return (x < y) ? x: y;
+};
+
+console.log(retornarMinimo(4, 7)); //4
+console.log(retornarMinimo(8, 2)); //2
+console.log(retornarMinimo(5, 5)); //5
+

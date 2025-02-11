@@ -1,0 +1,50 @@
+El método toFixed () redondea el número a un número específico de lugares decimales.
+sintaxis: NumberObject.toFixed(num)
+
+Si se omite el parámetro num, el parámetro predeterminado es 0.
+
+ejemplo1:
+
+let a = 20.135978;
+console.log(a.toFixed(3));
+//salida 20.136
+
+
+ejemplo 2:
+
+let num1 = 1;
+let num2 = 22;
+let resultado = num1 / num2;
+console.log(resultado.toFixed(2));
+//salida 0.05
+
+OJO: el metodo .toFixed() convierte el valor numerico a un string.
+
+
+
+
+El método toPrecision() devuelve una cadena que representa un objeto Number según la precisión especificada.
+El método toPrecision() formatea un número a una longitud especificada.
+Se agregan un punto decimal y nulos (si es necesario) para crear la longitud especificada.
+
+Ejemplos
+
+let numObj = 5.123456;
+
+console.log(numObj.toPrecision());    // logs '5.123456'
+console.log(numObj.toPrecision(5));   // logs '5.1235'
+console.log(numObj.toPrecision(2));   // logs '5.1'
+console.log(numObj.toPrecision(1));   // logs '5'
+
+numObj = 0.000123
+
+console.log(numObj.toPrecision());    // logs '0.000123'
+console.log(numObj.toPrecision(5));   // logs '0.00012300'
+console.log(numObj.toPrecision(2));   // logs '0.00012'
+console.log(numObj.toPrecision(1));   // logs '0.0001'
+
+// observe que bajo algunas circunstancias el valor retornado es en notación exponencial
+console.log((1234.5).toPrecision(2)); // logs '1.2e+3'
+
+OJO: el metodo .toPrecision() tambien convierte el valor numerico a un string.
+

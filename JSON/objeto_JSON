@@ -1,0 +1,21 @@
+El objeto JSON, que está disponible en todos los navegadores modernos, tiene dos útiles métodos para manejar el contenido con
+formato JSON: stringify y parse.
+
+JSON.stringify() Toma un objeto de JavaScript y lo transforma en una cadena JSON, retorna un string codificado en JSON.
+JSON.parse() Toma una cadena JSON y la transforma en un objeto de JavaScript.
+
+Ejemplo:
+
+const myObj = {
+  name: 'Skip',
+  age: 2,
+  favoriteFood: 'Steak'
+};
+
+const myObjStr = JSON.stringify(myObj);
+
+console.log(myObjStr);
+// "{"name":"Sammy","age":6,"favoriteFood":"Tofu"}"
+
+console.log(JSON.parse(myObjStr));
+// Object {name:"Sammy",age:6,favoriteFood:"Tofu"}

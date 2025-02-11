@@ -1,0 +1,36 @@
+El método .freeze() congela un objeto, es decir: impide que se le agreguen nuevas propiedades; impide que
+se puedan eliminar las propiedades ya existentes; impide que dichas propiedades, o su capacidad de
+enumeración, configuración, o escritura, puedan ser modificadas; impide también que se pueda modificar su
+prototipo. El método devuelve el objeto recibido.
+
+
+Ejemplo 1:
+
+const obj = {
+  prop: 42
+};
+
+Object.freeze(obj);
+
+obj.prop = 33;
+// Throws an error in strict mode
+
+console.log(obj.prop);
+// expected output: 42
+
+
+Ejemplo 2:
+
+let colores = {
+  "verde": "#10e04b",
+  "azul": "#1b50e0",
+  "negro": "#000000",
+  "blanco": "#ffffff"
+};
+
+Object.freeze(colores);
+
+colores.amarillo ="#fff200";
+
+console.log(colores); //TypeError: Cannot add property amarillo, object is not extensible
+

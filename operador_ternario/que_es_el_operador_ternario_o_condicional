@@ -1,0 +1,40 @@
+OPERADOR TERNARIO ?
+
+El operador ternario (QUE SE REPRESENTA CON EL SIGNO DE INTERROGACIÓN ?) permite evaluar una condicion, y ejecutar una de dos
+instrucciones dependiendo de la condición evaluada.
+Este operador se usa con frecuencia como atajo para la instrucción if.
+Se llama ternario porque consta de 3 partes, la primera es la condición, la segunda el valor que regresa si la condición es verdadera y el tercero es el valor que retorna si la condición es falsa, ejemplo:
+let puntaje = 5;
+alert ( puntaje >= 6 ? 'Pasaste' : 'Fallaste' );
+
+Condicion: puntaje >= 6
+El sigo de interrrogacion ? es el operador ternario.
+Cuando es cierto: 'Pasaste'
+Los dos puntos : separan la condicion de los posibles falso o verdadero.
+cuando es falso: 'Fallaste' );
+
+Sintaxis
+condición ? expresión1 : expresión2;
+
+Parámetros
+Condición.- Expresión que se puede evaluar como verdadera o falsa.
+Expresión 1 y 2.- Expresiones con valores definidos que pueden ejecutarse dependiendo de la condición.
+
+Forma de uso
+variable = expresion ? true_value : false_value;
+Esto permite básicamente una asignación condicional a una variable en función de la evaluación de la expresión. Si es cierto, entonces true_value se asigna a la variable, caso contrario, entonces false_value se asigna a la variable.
+
+Ejemplo 1
+var max = ( num1 > num2 ) ? num1 : num2 ;
+En el ejemplo anterior , max para ser asignado el número con el valor más alto . La expresión indica que si num1 es mayor que num2, entonces num1 se asigna a max . Sin embargo, si la expresión es falsa ( lo que significa que num2 es mayor o igual a num1 ), a continuación, num2 se asigna a máx .
+
+Ejemplo 2
+var miEdad = 24;
+var mayorEdad = (miEdad > 18) ? “Sí, eres mayor de edad” : “No, sigue intentando”;
+En este segundo ejemplo vemos cómo reconocer un dato si es mayor a 18, y asignar a la variable un string, con dos posibilidades.
+
+Ejemplo 3
+var diaFeriado = true;
+var pagar = “Hoy debo pagar ” + ( diaFeriado ? “19 pesos” : “15 pesos”);
+En este otro caso evaluamos una expresión booleana, y se obtiene un string el cual posteriormente es concatenado a otro.
+

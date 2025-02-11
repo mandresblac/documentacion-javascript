@@ -1,0 +1,5 @@
+Los eventos son funciones que suceden cuando algo ocurre. Pueden ser sucesos como un clic, pulsar una tecla, colocar el mouse sobre un botón, entre otros.
+
+Recuerda:
+En JavaScript puedes agregar un manejador de eventos con element.addEventListener('event', function).
+

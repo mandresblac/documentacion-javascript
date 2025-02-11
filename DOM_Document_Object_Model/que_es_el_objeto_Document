@@ -1,0 +1,23 @@
+El Document es la representacón del documento HTML a través de javaScript, y así es como atraves de los nodos y elementos podemos
+acceder mediante javaScript a las etiquetas de HTML.
+
+La interfaz Document representa cualquier página web cargada en el navegador y sirve como punto de entrada al contenido de la páginaweb, que es el árbol DOM (Document Object Model).
+
+El objeto Document es uno de los objetos propios de un navegador web y, por tanto, esto lo convierte en una herramienta indispensable para el desarrollo front-end de páginas web.
+
+Este objeto hace referencia a todos los elementos que están presente en una página web. Nos referimos a los textos, imágenes,
+enlaces, formularios, etc.). A través del objeto document vamos a poder acceder a ellos para ver su contenido, modificarlo e incluso
+ñadir nuevos.
+
+Objetos en document
+
+- styleSheets: devuelve un array con todas las hojas de estilo CSS que se están usando en la página mostrada.
+- anchors: Es un array con todas las anclas del documentos. Se identifican por la etiqueta <a> y tienen definido el atributo NAME.
+- links: Contiene todos los enlaces de la página, en un array. Se identifican por, también, la etiqueta <a> pero tienen definido el
+  atributo HREF.
+- forms: Un array con todas las vinculaciones a los formularios de la página, etiqueta: <form>
+- images: En este array se encuentran todas las imágenes. La etiqueta <img> las representa.
+- scripts: Devuelve una colección de todos los bloques <script> que estén en la página web.
+- embeds: Se obtiene un array con los elementos que tienen <embed>
+
+

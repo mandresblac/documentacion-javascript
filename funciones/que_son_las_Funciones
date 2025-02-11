@@ -1,0 +1,46 @@
+QUÉ SON LAS FUNCIONES EN JAVASCRIPT
+
+Las funciones son herramientas utilizadas en cualquier lenguaje de programación con la finalidad de reutilizar código. Con esto, se evita reescribir varias veces el mismo código, optimizando recursos en el programa.
+
+Las funciones son bloques de creación clave para escribir código. Una función es una colección reutilizable de líneas de código que hace que algo suceda dentro del programa.
+
+Las funciones son perfectas para escenarios en los que se necesita realizar la misma tarea varias veces. En lugar de duplicar la
+lógica en varias ubicaciones, lo que dificulta la actualización del código más adelante, puede centralizarlo en una ubicación.
+De este modo, puede llamarlo siempre que necesite que la operación se realice de nuevo. Incluso puede llamar a funciones desde otras
+funciones.
+
+Dentro de una función se pueden crear y emplear variables locales. Es decir, se generan, usan y destruyen dentro de la función.
+Esto se logra pasándolas a la función como parámetros de la misma, según lo que la función necesite.
+
+En JavaScript, las funciones no tienen un lugar definido dentro del programa. Estas pueden ser declaradas y descritas al inicio,
+final, o en cualquier parte del cuerpo del programa. Esto se debe a que JS, en primer lugar, hace una lectura completa del programa,
+luego ejecuta y guarda en memoria solo las funciones, para después ir ejecutando el cuerpo del programa.
+
+La principal ventaja, aparte de ordenar el código, hace que sea más fácil de mantener, ya que si se debe realizar algún ajuste, este
+únicamente se realiza en una parte del código.
+
+CÓMO ESCRIBIR UNA FUNCIÓN EN JAVASCRIPT
+Puedes escribir una función en JavaScript como en este ejemplo:
+
+function nombreDeFuncion(parametros) {
+	//Bloque de código que ejecuta la función
+	return
+}
+
+Recuerda:
+- Cuando escribes el mismo código muchas veces, es una mejor idea emplear una función.
+- Los parámetros de una función, son variables dentro de la función y funcionan exclusivamente dentro de ella.
+
+
+PROCEDIMIENTOS RECOMENDADOS
+Al crear funciones, tenga en cuenta algunos procedimientos recomendados:
+
+- Use nombres descriptivos que indiquen lo que pretenden hacer las funciones. Por ejemplo, el nombre displayGreeting deja claro que el propósito de la función es mostrar un saludo. Un nombre como greet, para una función que realiza la misma tarea, es un poco ambiguo. Podría mostrar un saludo, pero también podría realizar una operación diferente.
+
+- Use una mezcla de mayúsculas y minúsculas para combinar palabras. Para escribir combinando mayúsculas y minúsculas, mantenga la primera palabra de la variable o función en minúsculas y escriba en mayúsculas cada palabra posterior. Dado que los nombres de función y variable no pueden contener espacios, la combinación de mayúsculas y minúsculas facilita la lectura de las palabras del código. Por ejemplo, displayGreeting es más fácil de leer que displaygreeting.
+
+- Mantenga las funciones centradas en una tarea específica. Esto no solo facilita la reutilización de una función en un programa, sino que también facilita la depuración del código. Si tiene una incidencia con la función que no realiza la tarea que consideró que haría, sabrá que el problema está dentro de esa función.
+
+- Use texto comentado para anotar el código y describir lo que hacen las funciones. Para mejorar la legibilidad del código, incluya en el comentario una breve descripción de la tarea de cada función. Para crear comentarios, escriba una barra diagonal doble (//), seguida de su descripción. El comentario finaliza cuando se inicia una nueva línea.
+
+

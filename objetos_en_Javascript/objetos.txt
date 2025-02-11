@@ -1,0 +1,49 @@
+
+Un objeto es una coleccion de datos que tiene propiedades conformadas por llave:valor (key:value) y pueden tener cualquier tipo de
+dato como Strings, numeros, arreglos, otros objetos, funciones, booleanos preacticamente cualquier tipo de dato.
+
+Dentro de un objeto a las variables se le van allamar atributos o propiedades y a las funciones se les llama metodos.
+
+Para acceder a al valor de una propiedad del objeto, ejempĺo:
+
+const b = {
+    nombre: "Manuel",
+    apellido: "Blanco",
+    edad: 32,
+    cedula: 17420235,
+    pasatiempos: ["Bailar", "Ver TV", "Montar cicla", "Programar"]
+};
+console.log(b.pasatiempos[3]);//Programar
+
+otro ejemplo:
+
+const persona = {
+    nombre: "Manuel Andres",
+    apellido: "Blanco Clavijo",
+    edad: 32,
+    cedula: 17420235,
+    pasatiempos: ["Bailar", "Ver TV", "Montar cicla", "Programar"],
+    contacto: {
+        email: "mandresblac@gmail.com",
+        twitter: "@manblac",
+        telefono: 56841267941
+    },
+    decirNombre: function(){
+        console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años.`);
+    }
+};
+
+persona.decirNombre();//Hola me llamo Manuel Andres Blanco Clavijo y tengo 32 años.
+
+
+ALGUNOS METODOS O FUNCIONES DE LOS OBJETOS
+
+Object.keys(nombreDelObjeto) Lista todas las llaves que tiene el objeto, ejemplo de sintaxis:
+
+console.log(Object.keys(nombreDelObjeto));
+
+
+Object.values(nombreDelObjeto) Lista todos lod valores que tienen las llaves del objeto, ejemplo de sintaxis:
+
+console.log(Object.values(persona));
+

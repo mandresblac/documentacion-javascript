@@ -1,0 +1,27 @@
+El método substring() básicamente obtiene una parte de la cadena original y la devuelve como una nueva cadena. El método de subcadena espera dos parámetros:
+
+string.substring(startIndex, endIndex);
+startIndex : representa el punto de inicio de la subcadena
+endIndex : representa el punto final de la subcadena (opcional)
+
+Veamos el uso en un ejemplo. Supongamos que tenemos la siguiente cadena de ejemplo:
+
+onst myString = "I am learning JavaScript and it is cool!";
+
+Ahora, si configuramos startIndex como 0 y endIndex como 10, obtendremos los primeros 10 caracteres de la cadena original:
+
+myString.subString(0, 10);
+"I am learn"
+
+Sin embargo, si establecemos solo un índice inicial y ningún índice final para este ejemplo:
+
+myString.substring(5);
+"kearning javascript and it is cool!"
+
+Luego obtenemos una subcadena que comienza desde el sexto carácter hasta el final de la cadena original.
+
+Algunos puntos adicionales:
+
+Si startIndex = endIndex, el método de subcadena devuelve una cadena vacía
+Si startIndex y endIndex son mayores que la longitud de la cadena, devuelve una cadena vacía
+Si startIndex > endIndex, el método de subcadena intercambia los argumentos y devuelve una subcadena, asumiendo que endIndex > startIndex

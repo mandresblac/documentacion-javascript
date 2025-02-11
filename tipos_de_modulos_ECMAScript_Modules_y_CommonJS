@@ -1,0 +1,135 @@
+En JavaScript, los dos tipos principales de módulos son ECMAScript Modules (ESM) y CommonJS (CJS).
+Veamos sus diferencias, ventajas y cómo se usan.
+
+1. MÓDULOS ES6 (ECMASCRIPT MODULES - ESM)
+Los ECMAScript Modules (ESM) son el estándar moderno de JavaScript para trabajar con módulos. Se utilizan en navegadores y en entornos modernos como Node.js (a partir de la versión 12+).
+
+Características de ESM
+✅ Usa las palabras clave import y export.
+✅ Se ejecuta de manera asíncrona y soporta import() dinámico.
+✅ Permite tree-shaking (eliminación de código no utilizado).
+✅ Soportado en navegadores y en Node.js con "type": "module".
+
+
+Ejemplo de uso
+
+- EXPORTACIÓN NOMBRADA:
+
+// archivo math.js
+export function suma(a, b) {
+	return a + b;
+}
+
+export const PI = 3.1416;
+
+
+- IMPORTACIÓN NOMBRADA:
+
+// archivo main.js
+import { suma, PI } from './math.js';
+
+console.log(suma(2, 3)); // 5
+console.log(PI); // 3.1416
+
+- EXPORTACIÓN POR DEFECTO:
+
+// archivo saludo.js
+export default function saludo(nombre) {
+	return `Hola, ${nombre}`;
+
+- IMPORTACIÓN POR DEFECTO
+
+// archivo main.js
+import saludo from './saludo.js';
+
+console.log(saludo('Juan')); // Hola, Juan
+
+
+- IMPORTACIÓN DINÁMICA CON IMPORT()
+ESM permite la importación dinámica de módulos con import(), lo que mejora el rendimiento al cargar solo lo necesario
+en el momento adecuado.
+
+sync function cargarModulo() {
+	const { suma } = await import('./math.js');
+	console.log(suma(5, 3)); // 8
+}
+
+cargarModulo();
+
+
+USO EN NODE.JS
+Para usar módulos ESM en Node.js, se debe hacer una de estas dos cosas:
+
+1- Cambiar la extensión del archivo a .mjs.
+2- Agregar "type": "module" en el package.json.
+
+{
+	"type": "module"
+}
+
+---------------------------------------------------------------------
+
+2. COMMONJS (CJS)
+
+CommonJS (CJS) es el sistema de módulos usado tradicionalmente en Node.js. Usa require() para importar y
+module.exports para exportar.
+
+Características de CJS
+✅ Usa require() y module.exports.
+✅ Se ejecuta de manera síncrona.
+✅ Compatible con versiones antiguas de Node.js.
+🚫 No es compatible directamente con el navegador sin herramientas como Webpack.
+🚫 No permite import() dinámico nativamente.
+
+Ejemplo de uso
+
+- EXPORTACIÓN
+
+// archivo math.js
+module.exports = {
+	suma: (a, b) => a + b,
+	PI: 3.1416,
+};
+
+- IMPORTACIÓN
+
+// archivo main.js
+const { suma, PI } = require('./math');
+
+console.log(suma(2, 3)); // 5
+console.log(PI); // 3.1416
+
+- EXPORTACIÓN DE UNA SOLA FUNCIÓN
+
+// archivo saludo.js
+module.exports = function saludo(nombre) {
+	return `Hola, ${nombre}`;
+};
+
+- IMPORTACIÓN DE UNA SOLA FUNCIÓN
+
+// archivo main.js
+const saludo = require('./saludo');
+
+console.log(saludo('Juan')); // Hola, Juan
+
+
+DIFERENCIAS ENTRE ESM Y CJS
+
+
+CARACTERÍSTICA                 ECMASCRIPT MODULES (ESM)                    COMMONJS (CJS)
+Sintaxis de importación        import { x } from 'modulo.js'               const x = require('moduloo')
+Sintaxis de exportación        export / export default                     module.exports
+Ejecución                      Asíncrona (soporta import())                Síncrona
+Compatibilidad                 Navegadores y Node.js (moderno)             Solo Node.js
+Tree-shaking                   ✅ Sí                                       🚫 No
+Soporte en Node.js             "type": "module" o .mjs                     Soportado por defecto
+
+
+¿Cuál usar?
+- Para proyectos modernos en el navegador: ESM es la mejor opción.
+- Para proyectos en Node.js modernos: Se recomienda ESM, pero CJS sigue siendo común.
+- Para compatibilidad con proyectos antiguos de Node.js: CJS sigue siendo útil.
+
+En general, ESM es el estándar actual y el recomendado para nuevas aplicaciones.
+

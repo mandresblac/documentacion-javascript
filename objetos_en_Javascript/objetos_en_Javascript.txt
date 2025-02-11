@@ -1,0 +1,71 @@
+Uno de los aspectos más importantes del lenguaje Javascript es el concepto de objeto, puesto que prácticamente todo lo que utilizamos en Javascript, son objetos. Sin embargo, tiene ligeras diferencias con los objetos de otros lenguajes de programación, así que vamos a comenzar con una explicación sencilla y más adelante ampliaremos este tema en profundidad.
+
+¿Qué son los objetos? 
+En Javascript, existe un tipo de dato llamado objeto. No es más que una variable especial que puede contener más variables en su interior. De esta forma, tenemos la posibilidad de organizar múltiples variables de la misma temática dentro de un objeto. Veamos algunos ejemplos:
+
+En muchos lenguajes de programación, para crear un objeto se utiliza la palabra clave new. En Javascript también se puede hacer:
+
+const objeto = new Object(); // Esto es un objeto «genérico» vacío
+Sin embargo, siempre que podamos, en Javascript se prefiere utilizar lo que se llaman los literales, un método abreviado para crear objetos directamente, sin necesidad de utilizar la palabra new.
+
+
+Declaración de un objeto 
+Los literales de los objetos en Javascript son las llaves {}. Este ejemplo es equivalente al anterior, pero es más corto, rápido y cómodo, por lo que se aconseja declararlos así:
+
+const objeto = {}; // Esto es un objeto vacío
+Pero hasta ahora, solo hemos creado un objeto vacío. Vamos a crear un nuevo objeto, que contenga variables con información en su interior:
+
+// Declaración del objeto
+const player = {
+  name: "Manz",
+  life: 99,
+  strength: 10,
+};
+Estas variables dentro de los objetos se suelen denominar propiedades. Como se puede ver, un objeto en Javascript nos permite encapsular en su interior información relacionada, para posteriormente poder acceder a ella de forma más sencilla e intuitiva.
+
+
+Acceso a sus propiedades 
+Una vez tengamos un objeto, podemos acceder a sus propiedades de dos formas diferentes: a través de la notación con puntos o a través de la notación con corchetes.
+
+// Notación con puntos
+console.log(player.name); // Muestra "Manz"
+console.log(player.life); // Muestra 99
+
+// Notación con corchetes
+console.log(player["name"]); // Muestra "Manz"
+console.log(player["life"]); // Muestra 99
+El programador puede utilizar la notación que más le guste. La más utilizada en Javascript suele ser la notación con puntos, mientras que la notación con corchetes se suele conocer en otros lenguajes como «arrays asociativos».
+
+A algunos programadores puede resultarles confuso utilizar objetos con la notación de corchetes, ya que en otros lenguajes de programación los objetos y los arrays asociativos son cosas diferentes, y en Javascript ambos conceptos se mezclan.
+
+Hay ciertos casos en los que sólo se puede utilizar la notación con corchetes, como por ejemplo cuando se utilizan espacios en el nombre de la propiedad. Es imposible hacerlo con la notación con puntos.
+
+
+Añadir propiedades 
+También podemos añadir propiedades al objeto después de haberlo creado, aunque la sintaxis cambia ligeramente. Veamos un ejemplo equivalente al anterior:
+
+// Declaración del objeto
+const player = {};
+
+// Añadimos mediante notación con puntos
+player.name = "Manz";
+player.life = 99;
+player.strength = 10;
+
+// Añadimos mediante notación con corchetes
+player["name"] = "Manz";
+player["life"] = 99;
+player["strength"] = 10;
+Las propiedades del objeto pueden ser utilizadas como variables. De hecho, utilizar los objetos como elementos para organizar múltiples variables suele ser una buena práctica en Javascript.
+
+
+Tipos de objetos
+Hasta ahora, solo hemos visto los objetos «genéricos», en Javascript conocidos como tipo , declarándolos con un new Object() o con un literal {}, dos formas equivalentes de hacer lo mismo. Al generar una variable de tipo , esa variable «hereda» una serie de métodos (del objeto Object en este caso).
+
+const o = {};
+o.toString(); // Devuelve '[object Object]' (Un objeto de tipo Object)
+En este ejemplo, toString() es uno de esos métodos que tienen todas las variables de tipo . Sin embargo, hasta ahora y sin saberlo, cuando creamos una variable de un determinado tipo de dato (sea primitivo o no), es también de tipo , ya que todas las variables heredan de este tipo de dato. Por lo tanto, nuestra variable tendrá no sólo los métodos de su tipo de dato, sino también los métodos heredados de :
+
+const s = "hola";
+s.toString(); // Devuelve 'hola'
+Más adelante, veremos los métodos que heredan las variables de tipo  y comprobaremos que los objetos tienen detrás de si muchos más conceptos que los que hemos visto hasta ahora y que su definición es mucho más amplia.

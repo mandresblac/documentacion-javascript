@@ -1,0 +1,22 @@
+Metodos de arrays y objetos
+
+Metodo .push()
+Agrega un elemento al final de un array u objeto, ejemplo:
+
+const colores = ["Rojo", "Verde", "Azul"];
+colores.push("Negro");
+console.log(colores);//['Rojo', 'Verde', 'Azul', 'Negro']
+
+Metodo .unshift()
+Agrega un elemento al principio de un array u objeto, ejemplo:
+
+const colores = ["Rojo", "Verde", "Azul"];
+colores.unshift("Amarillo");
+console.log(colores);//['Amarillo', 'Rojo', 'Verde', 'Azul', 'Negro']
+
+Metodo .pop()
+Elimina el ultimo elemento de un array, ejemplo:
+
+const colores = ["Rojo", "Verde", "Azul"];
+colores.pop();
+console.log(colores);//['Rojo', 'Verde']

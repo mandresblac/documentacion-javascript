@@ -1,0 +1,51 @@
+En JavaScript existen 2 tipos de datos:
+
+1- DATOS PRIMITIVOS O SIMPLES
+   Se accede directamente al valor y sus valores pueden contener una sola cosa (ya sea una cadena, un número o lo que    sea), ademas son inmutables, es decir no se pueden modificar o cambiar su valor, pero si se puede generar un nuevo    valor a partir de otro, es decir generar nuevas copias, y son:
+   - string:
+     Para cadenas. Una cadena puede tener cero o más caracteres, no hay un tipo especial para un único carácter.
+   - Number:
+     Para números de cualquier tipo: enteros(int) o de punto flotante(float), los enteros están limitados por
+	 ±(253-1).
+   - boolean:
+     Para verdadero y falso: true/false.
+   - undefined:
+     Es una variable que no ha sido inicializada o que no se le ha asignado un valor, es decir que el valor esta
+	 ausente, para JavaScript una variable undefined es una variable que no tiene valor y que ademas no se le asigno
+	 ningun valor a la hora de que se creo.
+   - null:
+     Es un valor especial que significa que la variable esta vacia, pero es un valor intencionalmente asignado por el
+     programador, mientras que undefined es un valor asignado por JavaScript cuando detecta que una varibale no tiene 	   valor. Tenga en cuenta que Javascript trata "undefined" como el valor vacio por default y "null" como el valor
+	 vacio intencional.
+   - NaN (Not A Number)No es un número:
+     La consola de JavaScript nos va a arrojar un NaN cuando realisemos operaciones aritmeticas entre diferentes tipos     de datos donde alguno de los datos no sea un número.
+   - bigint:
+     Se usa cuando trabajamos con números enteros arbitrariamente grandes. Con bigint puedes almacenar y operar de
+	 forma segura en números enteros grandes incluso más allá del límite seguro de enteros para Number. Un bigint se
+	 crea agregando n al final de un número entero o llamando al constructor, ejemplo:
+     const bigInt = 1234567890123456789012345678901234567890n; // la "n" al final significa que es un BigInt
+   - Symbol:
+     Es un nuevo tipo de dato introducido desde el standar ECMASCRIPT 2015 y se utiliza para crear identificadores de      referencia unicos e irrepetibles para los objetos, un Symbol es como un objeto que crea una referencia unica, su      uso mas frecuente es para crear elementos privadas dentro de un objeto {} y que sus referencias van a ser unicas.
+
+2- DATOS COMPUESTOS O COMPLEJOS
+   No se accede directamente al valor sino a una refencia de donde se encuentra ese valor (Se accede a la referencia
+   del valor a la coordenada), almacenan colecciones de datos o entidades mas complejas, son mutables es decir que se    puede cambiar su valor, y son:
+   - object {}:
+   	 Un objeto es una coleccion de llaves:valores (key:value), dentro de un objeto a las variables se le van a llamar
+	 atributos/propiedades y a las funciones se les llama métodos, y pueden tener Strings, Numero, array, funciones,
+	 booleans, otros objetos, precticamente cualquier tipo de dato.
+   - array o arreglos []:
+     Un arreglo es una coleccion de elementos que pueden ser de diferente tipo,, por ejemplo String, boolean, Number, 	   otro array, un objeto, etc. La posicion del primer elemento del arreglo siempre va a ser en cero.
+   - function (){}:
+   	 Una funcion es un bloque de codigo, que tiene su propio contenido independiente al ambito o scope global, que se      va a definir una sola vez y se puede ejecutar en cualquier momento, es decir, es un fragmento de codigo que se
+	 declara una sola vez y luego se puede reutilizar tantas veces como sea necesario, ademas una funcion puede o no
+	 recibir parametros y tambien pude devolver o no valores, las funciones en JavaScript se consideran objetos.
+   - Class {}
+   - etc.
+
+El operador typeof nos permite ver qué tipo está almacenado en una variable.
+
+Dos formas de uso: typeof x  o  typeof(x).
+Devuelve una cadena con el nombre del tipo. Por ejemplo "string".
+Para null devuelve "object": esto es un error en el lenguaje, en realidad no es un objeto.
+

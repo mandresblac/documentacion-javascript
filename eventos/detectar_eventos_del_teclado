@@ -1,0 +1,20 @@
+Para detectar eventos del teclado en Html usamos  en Javascript document.addEventListener (“escucha el evento”). Podemos definir
+este evento con keyup (al soltar la tecla) o keydown (al presionarla). Todo manejador de eventos devuelve un objeto con los detalles del evento.
+
+El objeto de HTML que tiene todo lo que hacemos es el objeto document. En document es el lugar donde está la forma de detectar que
+las flechas del teclado o realmente cualquier tecla del teclado ha sido presionada.
+
+Canvas no es el sitio correcto para definir el evento con keydown porque las flechas son un evento de todo.
+
+Es una mala práctica colocar números sueltos dentro del código. Cuando tenemos números que significan algo, no nos cuesta nada crear variables que le agreguen ese significado.
+
+Objeto Literal: es una variable especial que tiene por dentro más variables.
+
+Una buena práctica es escribir el nombre de variables, atributo o propiedad en mayúscula para indicar que esa variable no va a cambiar de valor durante la vida del código. Esto se conoce como camelcase.
+
+Switch: se usa cuando tengo muchas condicionales que están agrupadas (cuando tengo muchos if). El uso de switch tiende a ser abusado, por eso hay que emplearla solo cuando lo amerite.
+
+Buena práctica es preguntarse:
+¿Mi uso de if hace más fácil o más difícil de leer el código?
+¿Mi uso de switch hace más fácil o más difícil de leer el código?
+

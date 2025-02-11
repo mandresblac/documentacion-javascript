@@ -1,0 +1,18 @@
+Si tenemos un montón de código JavaScript, podemos ponerlo en un archivo separado.
+
+Los archivos de script se adjuntan a HTML con el atributo src, ejemplo:
+
+<script src="/path/to/script.js"></script>
+
+Aquí, /path/to/script.js es una ruta absoluta al archivo de script (desde la raíz del sitio). También se puede proporcionar una ruta
+relativa desde la página actual. Por ejemplo, src="script.js" significaría un archivo "script.js" en la carpeta actual.
+
+También podemos dar una URL completa. Por ejemplo:
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+Para adjuntar varios scripts, usa varias etiquetas:
+
+<script src="/js/script1.js"></script>
+<script src="/js/script2.js"></script>
+…
+

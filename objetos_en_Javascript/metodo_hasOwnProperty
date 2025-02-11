@@ -1,0 +1,48 @@
+El método hasOwnProperty() en JavaScript se usa para comprobar si un objeto tiene una propiedad especifica.
+Sirve para saber si un objeto contiene una propiedad.
+
+Sintaxis:
+object.hasOwnProperty(prop);
+
+Parámetros: este método acepta un único parámetro.
+- prop: Contiene el nombre en forma de String o Símbolo de la propiedad a probar.
+Valor devuelto: Devuelve un valor booleano (true o false) que indica si el objeto tiene la propiedad
+especificada.
+
+
+EjEMPLO 1:
+
+//Declaramos un objeto
+let miCuaderno = {
+  "color": "verde",
+  "categoria": 3,
+  "precio": 4.56
+};
+
+console.log(miCuaderno.hasOwnProperty("color")); //true porque la propiedad color si existe en el objeto
+console.log(miCuaderno.hasOwnProperty("origen")); //false porque la propiedad origen no existe en el objeto
+
+
+EJEMPLO 2:
+
+//Funcion que tiene un condicional que verifica si un objeto tiene una propiedad o no la tiene.
+
+function verificarPropiedad(objeto, propiedad){
+  if(objeto.hasOwnProperty(propiedad)){
+    return `Propiedad: ${objeto[propiedad]}`;
+  }else {
+    return "El objeto no tiene esta propiedad.";
+  }
+};
+
+//Declaramos el objeto miCuaderno
+let miCuaderno = {
+  "color": "verde",
+  "categoria": 3,
+  "precio": 4.56
+};
+
+//Verificamos si el objeto contiene la propiedad especificada.
+console.log(verificarPropiedad(miCuaderno, "color"));
+console.log(verificarPropiedad(miCuaderno, "origen"));
+

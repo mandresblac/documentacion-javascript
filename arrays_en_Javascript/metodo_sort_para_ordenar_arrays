@@ -1,0 +1,73 @@
+En JavaScript, podemos ordenar los elementos de un arreglo fácilmente con el método incorporado sort().
+
+Sin embargo, los tipos de datos (cadena, número, etc.) pueden diferir de un arreglo a otro. Esto significa que usar únicamente el
+método sort() no siempre es la solución adecuada.
+
+En este post, aprenderás como ordenar un arreglo en JavaScript usando el método sort() con cadenas y números.
+
+
+ARREGLO DE CADENAS
+Comencemos con cadenas:
+
+const equipos = ['Real Madrid', 'Manchester Utd', 'Bayern Munich', 'Juventus'];
+
+Cuando usamos el método sort(), los elementos se ordenarán en orden ascendente (de la A a la Z) por defecto:
+
+equipos.sort();
+// ['Bayern Munich', 'Juventus', 'Manchester Utd', 'Real Madrid']
+
+Si prefieres ordenar el arreglo en orden descendente, debes usar el método reverse() en su lugar:
+
+equipos.reverse();
+// ['Real Madrid', 'Manchester Utd', 'Juventus', 'Bayern Munich']
+
+
+
+ARREGLO DE NÚMEROS
+Lamentablemente, ordenar números no es tan simple. Si aplicamos el método sort() directamente a un arreglo de números, veremos un
+resultado inesperado:
+
+const numeros = [3, 23, 12];
+numeros.sort(); // --> 12, 23, 3
+
+¿Por qué el método sort() no funciona con números?
+En realidad está funcionando, pero este problema ocurre porque JavaScript ordena los números alfabéticamente. Déjame explicarte
+esto en detalle.
+
+Pensemos en A=1, B=2 y C=3.
+
+const miArreglo = ['C', 'BC', 'AB'];
+miArreglo.sort(); // [AB, BC, C]
+
+Por ejemplo, si tenemos tres cadenas como C (3), BC (23) y AB (12), JavaScript las ordenará como AB, BC y C en orden ascendente, lo
+que es alfabéticamente correcto.
+
+Sin embargo, JavaScript ordenará los números (alfabéticamente nuevamente) como 12, 23 y 3, lo cual es incorrecto.
+
+
+SOLUCIÓN: LA FUNCIÓN DE COMPARACIÓN
+Afortunadamente, podemos complementar el método sort() con una función de comparación básica que haga el truco:
+
+function(a, b) {return a - b}
+
+El método sort() puede ordenar valores negativos, cero y positivos en el orden correcto. Cuando compara dos valores, los envía a
+nuestra función de comparación y luego ordena los valores de acuerdo al resultado devuelto.
+
+- Si el resultado es negativo, A se ordena antes que B.
+- Si el resultado es positivo, B se ordena antes de A.
+- Si el resultado es 0, nada cambia.
+
+Todo lo que necesitamos es usar la función de comparación dentro del método sort():
+
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return a - b}); // --> 3, 12, 23
+
+Si queremos ordenar los números en orden descendente, esta vez necesitamos restar el segundo parámetro (b) del primero (a):
+
+const numeros = [3, 23, 12];
+numeros.sort(function(a, b){return b - a}); // --> 23, 12, 3
+
+En conclusión
+Como podemos ver, ordenar los elementos de un arreglo puede hacerse fácilmente en JavaScript con el método sort(), si sabemos usarlo
+correctamente. Espero que mi post pueda servirte de ayuda para entenderlo y usarlo de la mejor forma.
+

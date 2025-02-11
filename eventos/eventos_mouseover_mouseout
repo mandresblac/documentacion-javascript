@@ -1,0 +1,3 @@
+El evento mouseover permite detectar cuando el puentero del mouse se encuentra dentro de la region de un elemento en la pantalla.
+
+El evento mouseout permite detectar cuando el puentero del mouse sale de una region de un elemento en la pantalla.

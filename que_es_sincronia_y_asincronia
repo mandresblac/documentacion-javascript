@@ -1,0 +1,18 @@
+La sincronia significa que javascript ejecuta una tarea a la vez, es decir secuencialmente, hasta que no termina por completo una tarea no
+pasa a ejecutar la siguiente.
+
+
+La asincronia se refiere a cuando javascript ejecuta una tarea que por diferentes circuntancias se demora o retrasa en su finalizacion,
+entonces la envia temporalmente a un call stack (o cola de tareas) donde la deja pendiente y le hace seguimiento, mientras tanto continua
+ejecutando las demas tareas que son sincronas o secuenciales y una vez que las termina regresa nuevamente al call stack para verificar las
+tareas que estan pendientes y las ejecuta en el estado en que se encuentren, puede ser un estado de exito, es decir que la tarea se cumplio
+satisfactoriamente o de error cuando la tarea no se cumplio satisfactoriamente.
+
+
+La formas en que javascript maneja la Asincronia son:
+- Callbacks: Es nna función que se pasa como parametro de otra función y que sera invocada segun sea la necesidad.
+- Promesas (ES6): Son funciónes no-bloqueantes que trabajan con la asincronia, las cuales pueden retornar un valor (o
+promesa) ahora mismo, mañana o nunca.
+- Async/Await (ES2017): Permite estructurar una función asincrona sin bloqueo de una manera similar a una función
+sincrona ordinaria.
+

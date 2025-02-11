@@ -1,0 +1,20 @@
+ORDEN DE PRIORIDAD O PRECEDENCIA DE LAS OPERACIONES
+
+Inicia de izquierda a derecha
+1- Parantesis
+2- Raices y Potencias
+3- Multiplicaciones y divisiones
+4- Sumas y restas
+5- Modulo o residuo
+6- Operadores relacionales o de comparacion:
+	- Igual que ===
+	- Diferente o distinto !=
+	- Mayor que >
+	- Mayor o igual que >=
+	- Menor que <
+	- Menor o igual que <=
+7- Operadores logicos:
+	- not ! (No)
+	- and && (y)
+	- or || (o)
+

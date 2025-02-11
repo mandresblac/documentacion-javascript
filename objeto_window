@@ -1,0 +1,11 @@
+El objeto window es el objeto global de JavaScript en los navegadores que representa la ventana del navegador donde se esta
+visualizando la pagina.
+El objeto window representa la ventana que contiene un documento DOM; la propiedad document apunta al DOM document cargado en esa
+ventana. El objeto window al que pertenece un documento puede ser obtenido usando la propiedad document.defaultView.
+En un navegador con pestañas, como Firefox, cada pestaña contine su propio window object (y si está escribiendo una extensión, la
+ventana del navegador es una ventana separada también - para más información vea Trabajar con ventanas desde el código chrome).
+Esto significa que el objeto window no se comparte entre diferentes pestañas de la misma ventana del navegador. Algunos métodos,
+como window.resizeTo (en-US) y window.resizeBy (en-US) se aplican sobre toda la ventana del navegador y no sobre una pestaña
+específica a la que pertenece el objeto window. Generalmente, cualquier cosa que razonablemente no pueda pertenecer a una pestaña,
+pertenece a la ventana.
+

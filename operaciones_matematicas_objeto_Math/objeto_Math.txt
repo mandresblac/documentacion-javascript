@@ -1,0 +1,20 @@
+Math.max(x)  Devuelve el número maximo.
+Math.min(x)  Devuelve el número minimo.
+Math.sqrt(x) Devuelve la raíz cuadrada.
+
+Math.cos(x) Devuelve el coseno de un número.
+Math.sin(x) Devuelve el seno de un número.
+Math.tan(x) Devuelve la tangente de un número.
+Math.acos(x) Devuelve el arco coseno de un número.
+Math.asin(x) Devuelve el arco seno de un número.
+Math.atan(x) Devuelve el arco tangente de un número.
+
+Math.PI() Devuelve el número PI.
+
+Math.random(x) Devuelve un número aleatorio entre 0 (inclusivo) y 1(exclusivo).
+Math.floor(x) Redondea hacia abajo al número entero más cercano.
+Math.ceil(x) Redondea hacia arriba hasta llegar al número entero mas cercano.
+Math.round(x) Redondea al número entero más cercano.
+Math.abs(x) Devuelve el valor absoluto de un número, es decir, toma el valor absoluto de un número, lo que significa que niega los
+valores negativos pero deja los positivos tal y como estan.
+

@@ -1,0 +1,23 @@
+Interpolacion de variables, Plantillas de cadenas de texto (Template Strings) o Plantillas literales.
+
+Caracteristicas:
+- Se usa el acento invertido (backtick) ` en lugar de comillas.
+- Pueden contener comillas simples o dobles.
+- Las líneas se preservan como se escriben en el codigo.
+- Para reemplazar una variable se escribe ${variable}.
+- Dentro de ${} también se pueden escribir expresiones.
+
+
+EJEMPLO:
+
+let nombre = "manuel";
+let apellido = "Blanco";
+
+console.log(`Hola, mi nombre es ${nombre} ${apellido}`);
+
+
+En el ejemplo anterior dentro del console.log() usamos comillas invertidas o backtics `` para crear las
+plantillas literales.
+El formato ${variable} nos permite insertar un valor dinámico en la cadena. Todo lo que hay dentro ${} es
+evaluado como JavaScript.
+

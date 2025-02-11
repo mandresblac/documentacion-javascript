@@ -1,0 +1,42 @@
+El metodo appendChild() agrega un nodo (elemento) como el último hijo de un elemento.
+
+appendChild() es un método  que se utiliza para agregar nodos (normalmente elementos) al final de un nodo
+principal especificado. Se puede ejecutar en nodos secundarios existentes o creando nuevos elemento.
+
+Sintaxis
+element.appendChild(node)
+o
+node.appendChild(node)
+
+
+EJEMPLO para crear un párrafo con un texto:
+
+1-Crear un elemento de párrafo
+2-Crear un nodo de texto
+3-Agregar el nodo de texto al párrafo
+4-Añada el párrafo al documento.
+
+codigo html:
+
+<button onclick="myFunction()">Append</button>
+<div id="myDIV">
+<h2>I am myDIV</h2>
+</div>
+
+
+codigo javascript:
+
+function myFunction() {
+	//1- Crea un elemento p de html con el metodo createElement():
+	const para = document.createElement("p");
+
+	//2- Crea un nodo de texto con el metodo .createTextNode():
+	const node = document.createTextNode("Esto es un perrafo.");
+
+	//3- Agrega el nodo de texto al elemento p:
+	para.appendChild(node);
+
+	//4- Añade el elemento p al body del HTML:
+	document.getElementById("myDIV").appendChild(para);
+}
+

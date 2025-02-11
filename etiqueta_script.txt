@@ -1,0 +1,5 @@
+
+Podemos usar una etiqueta <script> para agregar código JavaScript a una página.
+Los atributos type y language no son necesarios.
+Un script en un archivo externo se puede insertar con <script src="path/to/script.js"> </script>.
+

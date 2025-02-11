@@ -1,0 +1,31 @@
+event.preventDefault() es un método que vive dentro del prototipo de evento event, y se suma a aquellos eventos de navegador que tienen la
+propiedad cancelable, por ejemplo, el evento click. Quienes no tienen esta propiedad, preventDefault() no hará nada con ellos, por ejemplo,
+con un evento scroll.
+
+Lo que hace el método es que señala al navegador que el comportamiento por defecto asociado a un evento cancelable no se ejecute, pero a la
+vez sin detener la propagación del mismo, significando que el evento todavía puede afectar el DOM, pero naturalmente se espera que tú seas
+quien cree un comportamiento alterno. Si aunado a preventDefault(), también llamas a stopPropagation() o stopImmediatePropagation(), matas
+completamente al evento.
+
+Se usa más comúnmente para evitar que una página se refresque automáticamente al momento de llamar al evento submit en un formulario y para
+evitar este mismo comportamiento en un evento click lo cual se usa en gran medida para hacer aplicaciones SPA/SSR, que están de moda, ya que
+estas aplicaciones, a través de sus frameworks (como React, Svelte o Vue) usan su propio "manejador de rutas" cuyo comportamiento previene por
+defecto al del navegador.
+
+También se usa comúnmente para evitar que ciertos caracteres se escriban en un campo de texto.
+
+Por ejemplo, si haces una función soloMinusculas que permite que event.charCode sea solo entre 97 y 122 (el rango de letras minúsculas),
+significando que llamas a event.preventDefault() en los demás casos, y luego asocias esta función al evento target keypress de un <input>
+HTML normal a través de addEventListener, entonces impedirás que las letras mayúsculas, números o caracteres especiales aparezcan en el campo
+al ser tecleadas. Simplemente los ignora. Aunado a esto, en el caso donde llamas a event.preventDefault() puedes luego ejecutar una acción
+alterna, como mostrar un mensaje avisando al usuario que el campo solo acepta letras minúsculas.
+
+¿Esto significa que el campo genuinamente solo acepta letras minúsculas? Pues no, porque el campo de texto escuchó solo al evento keypress,
+pero igual puedes pegar texto con mayúsculas, números o caracteres especiales. Hablo del evento paste, que es otro evento cancelable. Para
+tener una experiencia más consistente, entonces tendrías que sumar la función soloMinusculas a otro addEventListener, escuchando al evento
+paste. En este caso, tendrías que escanear el String para checar con event.charCode que no hayan caracteres fuera del rango 97 a 122.
+
+ Sin embargo debes tener en cuenta de normalmente preventDefault() se suele usar para optimizar la experiencia de usuario y no suma ninguna
+ medida de seguridad, ya que un hacker puede saltar cualquier comportamiento, por defecto o no, del navegador (incluyendo la validación de un
+ formulario) simplemente desactivando JavaScript.
+

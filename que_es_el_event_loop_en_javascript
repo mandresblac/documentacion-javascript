@@ -1,0 +1,18 @@
+- Event loop
+Es un bucle de eventos que no es mas que un patrón de diseño que espera y distribuye eventos o mensajes en un programa.
+
+- Memory Heap
+Los objetos (como variables, funciones, etc) son asignados a un montículo, o un espacio de memoria gigante sin un orden
+particular, donde estan a la espera de ser utilizados.
+
+- Call Stack (pila)
+Apila de forma organizada las instrucciones de nuestro programa y con ello sabemos como vamos a distribuirlos, aquí se
+maneja el concepto LIFO(Last-in, First-out) (Ultimo en entrar, Primero en salir)
+
+- TASK QUEUE
+Es la cola de tareas, se maneja la concurrencia, se agregan las tareas que ya están listas para pasar al Stack (pila).
+El stack debe estar vacío.
+
+- MicroTask Queue
+Las promesas tienen otra forma de ejecutarse y una prioridad superior.
+

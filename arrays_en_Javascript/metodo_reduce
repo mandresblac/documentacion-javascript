@@ -1,0 +1,14 @@
+El objetivo del método .redcue() es reducir una lista larga a un solo elemento, que podría ser un objeto o un número, por ejemplo. 
+
+Para usar reduce(), debe proporcionarle una función que tome dos parámetros, un valor acumulado y el valor actual del bucle.
+
+Dentro de la función, debe volver a calcular el valor acumulado mediante el valor actual. El segundo argumento de reduce() es el valor de inicio. Dado que en este caso quiere usar reduce() para calcular las ventas, la función debe actualizar el valor acumulado con el valor de lo que hay en la propiedad amount para cada elemento. El valor inicial debe ser 0. Con esto en mente, el aspecto del código es el siguiente:
+
+
+let sales = [
+    {date : '2021-05-01', amount: 2},
+    {date : '2021-05-01', amount: 1},
+    {date : '2021-05-01', amount: 3}
+];
+
+sales.reduce((acumulado, actual) => acumulado + actual.amount, 0); // 6

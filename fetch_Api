@@ -1,0 +1,43 @@
+La fetch API nos permite acceder a recursos de un servidor de manera asíncrona (peticiones Ajax). Este tipo de peticiones nos
+permiten realizar solicitudes HTTP sin necesidad de recargar toda la página.
+
+Para utilizar fetch API no es necesario usar ninguna librería. Funcionan haciendo uso del código nativo del navegador.
+
+La API fetch utiliza promesas, es decir, devuelve un objeto con dos métodos, uno then() y otro catch() a los que pasaremos una
+función que será invocada cuando se obtenga la respuesta o se produzca un error.
+
+Fetch esta basado en promesas de Javascript, para realizar peticiones HTTP asíncronas de una forma más legible y cómoda.
+
+
+
+PETICIONES HTTP CON FETCH
+Fetch es el nombre de una nueva API para Javascript con la cuál podemos realizar peticiones HTTP asíncronas utilizando promesas y de
+forma que el código sea un poco más sencillo y menos verbose. La forma de realizar una petición es muy sencilla, básicamente se
+trata de llamar a fetch y pasarle por parámetro la URL de la petición a realizar:
+
+// Realizamos la petición y guardamos la promesa
+const request = fetch("/robots.txt");
+
+// Si es resuelta, entonces ejecuta esta función...
+request.then(function(response) { ... });
+
+
+
+El fetch() devolverá una  que será aceptada cuando reciba una respuesta y sólo será rechazada si hay un fallo de red o si por alguna
+razón no se pudo completar la petición. El modo más habitual de manejar las promesas es utilizando .then(). Esto se suele reescribir
+de la siguiente forma, que queda mucho más simple:
+
+fetch("/robots.txt")
+  .then(function(response) {
+    /** Código que procesa la respuesta **/
+  });
+
+Al método .then() se le pasa una función callback donde su parámetro response es el objeto de respuesta de la petición que hemos
+realizado. En su interior realizaremos la lógica que queramos hacer con la respuesta a nuestra petición. A la función fetch(url,
+options) se le pasa por parámetro la url de la petición y, de forma opcional, un objeto options con opciones de la petición HTTP.
+
+
+Consultar en los siguientes sitios web:
+https://pablomonteserin.com/curso/javascript/ejemplos-api-fetch/
+https://lenguajejs.com/javascript/peticiones-http/fetch/#peticiones-http-con-fetch
+

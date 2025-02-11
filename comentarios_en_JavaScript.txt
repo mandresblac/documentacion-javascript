@@ -1,0 +1,33 @@
+Los comentarios se pueden poner en cualquier lugar de un script. No afectan su ejecución porque el motor simplemente los ignora.
+
+Los comentarios de una línea comienzan con dos caracteres de barra diagonal //.
+
+El resto de la línea es un comentario. Puede ocupar una línea completa propia o seguir una sentencia.
+
+Como aqui:
+
+// Este comentario ocupa una línea propia.
+alert('Hello');
+
+alert('World'); // Este comentario sigue a la sentencia.
+
+Los comentarios de varias líneas comienzan con una barra inclinada y un asterisco /* y terminan con un asterisco y una barra
+inclinada */.
+
+Como aquí:
+
+/* Un ejemplo con dos mensajes.
+Este es un comentario multilínea.
+*/
+alert('Hola');
+alert('Mundo');
+
+El contenido de los comentarios se ignora, por lo que si colocamos el código dentro de /* … */, no se ejecutará.
+
+A veces puede ser útil deshabilitar temporalmente una parte del código:
+
+/* Comentando el código
+alert('Hola');
+*/
+alert('Mundo');
+

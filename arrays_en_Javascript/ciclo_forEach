@@ -1,0 +1,79 @@
+Por cada uno (forEach)
+El método o ciclo forEach() se usa en Arrays, no devuelve nada y espera que se le pase por parámetro una funcion que se ejecutará
+por cada elemento del array. Esa función, puede ser pasada en cualquiera de los formatos que hemos visto: como función tradicional
+o como función flecha, ejemplos:
+
+const letters = ["a", "b", "c", "d"];
+
+//Con funciones por expresión
+const f = function () {
+  console.log("Un elemento.");
+};
+letters.forEach(f);
+
+//Con funciones anónimas
+letters.forEach(function () {
+  console.log("Un elemento.");
+});
+
+// Con funciones flecha
+letters.forEach(() => console.log("Un elemento."));
+
+
+Sin embargo, este ejemplo no tiene demasiada utilidad. A la funcion callback se le pueden pasar varios parámetros opcionales:
+
+Si se le pasa un primer parámetro, este será el elemento del array.
+Si se le pasa un segundo parámetro, este será la posición en el array.
+Si se le pasa un tercer parámetro, este será el array en cuestión.
+
+Veamos un ejemplo:
+
+const letters = ["a", "b", "c", "d"];
+
+letters.forEach((element) => console.log(element));                // Devuelve 'a' / 'b' / 'c' / 'd'
+letters.forEach((element, index) => console.log(element, index));  // Devuelve 'a' 0 / 'b' 1 / 'c' 2 / 'd' 3
+letters.forEach((element, index, array) => console.log(array[0])); // Devuelve 'a' / 'a' / 'a' / 'a'
+
+En el ejemplo anterior, he nombrado element al parámetro que hará referencia al elemento, index al parámetro que hará referencia al
+índice (posición en el array) y array al parámetro que hará referencia al propio array en cuestión. En algunos ejemplos los
+abreviaré como (e, i, a), por su inicial. Aún así, el usuario puede ponerle a estos parámetros el nombre que prefiera.
+
+Por ejemplo, una buena estrategia sería utilizar letters (plural) para el array y letter (singular) en lugar de element para el
+elemento que se va recorriendo. Como se puede ver, realmente forEach() es otra forma de hacer un bucle (sobre un array), sin tener
+que recurrir a bucles tradicionales como for o while.
+
+NOTA: Aunque no aparece en la tabla anterior, al método forEach() se le puede pasar un segundo parámetro arg, que representa el
+valor que sobreescribiría a la palabra clave this en el código dentro de la función callback. De necesitar esta funcionalidad, no
+podrías utilizar las funciones flecha, ya que el this no tiene efecto en ellas.
+
+
+
+otro ejemplo del ciclo forEach:
+
+const colores = ["Rojo", "Verde", "Azul"];
+colores.forEach(function (elemento, index) {
+    console.log(`<li id="${index}">${elemento}</li>`);
+});
+
+//salida
+<li id="0">Rojo</li>
+<li id="1">Verde</li>
+<li id="2">Azul</li>
+
+
+Otro ejemplo de ciclo forEach donde se multiplica por 2 los elementos del array números y se muestra el indice o posicion de cada elemento
+dentro del array:
+
+let numeros = [1, 2, 3, 4, 5];
+numeros.forEach((element, index) => {
+  let multiplica = element * 2;
+  console.log(multiplica, index);
+});
+
+//salida
+2 0
+4 1
+6 2
+8 3
+10 4
+

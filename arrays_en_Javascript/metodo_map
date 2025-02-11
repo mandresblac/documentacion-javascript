@@ -1,0 +1,168 @@
+CÓMO UTILIZAR LA FUNCIÓN O METOD .MAP() DE LOS ARREGLOS EN JS
+
+A veces es necesario tomar un arreglo y aplicar algún procedimiento a sus elementos internos para obtener un nuevo arreglo con
+elementos modificados.
+
+En lugar de iterar manualmente sobre el arreglo usando un bucle, puedes simplemente usar el método incorporado Array.map().
+
+El método Array.map() te permite iterar sobre un arreglo y modificar sus elementos utilizando una función callback. La función
+callback se ejecutará entonces en cada uno de los elementos del arreglo.
+
+El método map() es un método muy potente y útil para trabajar con arrays, puesto que su objetivo es devolver un nuevo array donde
+cada uno de sus elementos será lo que devuelva la función callback por cada uno de los elementos del array original:
+
+
+EJEMPLO 1
+const names = ["Ana", "Pablo", "Pedro", "Pancracio", "Heriberto"];
+const nameSizes = names.map((name) => name.length);
+
+nameSizes; // Devuelve [3, 5, 5, 9, 9]
+
+Observa que el array devuelto por map() es nameSizes, y cada uno de los elementos que lo componen, es el número devuelto por el
+callback (name.length), que no es otra cosa sino el tamaño de cada string.
+
+Este método nos permite hacer multitud de operaciones, ya que donde devolvemos name.length podriamos devolver el propio modificado
+o cualquier otra cosa.
+
+
+EJEMPLO 2
+Otro ejemplo del metodo .map() que nos devolvera los números pares e impares que hay dentro del array numeros:
+
+const numeros = [5, 2, 26, 17, 9, 14, 31];
+const numerosPares = numeros.map((element) => {
+    (element % 2 === 0)
+	? console.log(`${element} es par`)
+	: console.log(`${element} es impar`);
+});
+
+console.log(numerosPares);
+
+Salida:
+
+5 es impar
+2 es par
+26 es par
+17 es impar
+9 es impar
+14 es par
+31 es impar
+
+
+EJEMPLO 3
+supón que tienes el siguiente elemento de arreglo:
+let arr = [3, 4, 5, 6];
+
+Ahora imagina que tienes que multiplicar cada uno de los elementos del arreglo por 3. Podrías considerar usar un bucle for como el
+siguiente:
+
+let arr = [3, 4, 5, 6];
+
+for (let i = 0; i < arr.length; i++){
+  arr[i] = arr[i] * 3;
+}
+
+console.log(arr); // [9, 12, 15, 18]
+
+Pero en realidad puedes utilizar el método Array.map() para conseguir el mismo resultado, He aquí un ejemplo:.
+
+let arr = [3, 4, 5, 6];
+
+let modifiedArr = arr.map(function(element){
+    return element * 3;
+});
+
+console.log(modifiedArr); // [9, 12, 15, 18]
+
+El método Array.map() se utiliza comúnmente para aplicar algunos cambios a los elementos, ya sea multiplicando por un número
+específico como en el código anterior, o haciendo cualquier otra operación que pueda necesitar para su aplicación.
+
+
+
+
+CÓMO UTILIZAR MAP() SOBRE UN ARREGLO DE OBJETOS
+
+Por ejemplo, puedes tener un arreglo de objetos que almacene los valores de firstName y lastName de tus amigos de la siguiente
+manera:
+
+let users = [
+  {firstName : "Susan", lastName: "Steward"},
+  {firstName : "Daniel", lastName: "Longbottom"},
+  {firstName : "Jacob", lastName: "Black"}
+];
+
+Puedes utilizar el método map() para iterar sobre el arreglo y unir los valores de firstName y lastName de la siguiente manera:
+
+let users = [
+  {firstName : "Susan", lastName: "Steward"},
+  {firstName : "Daniel", lastName: "Longbottom"},
+  {firstName : "Jacob", lastName: "Black"}
+];
+
+let userFullnames = users.map(function(element){
+    return `${element.firstName} ${element.lastName}`;
+})
+
+console.log(userFullnames);
+// ["Susan Steward", "Daniel Longbottom", "Jacob Black"]
+
+El método map() pasa algo más que un elemento. Veamos todos los argumentos que pasa map() a la función callback.
+
+
+
+
+LA SINTAXIS COMPLETA DEL MÉTODO .MAP()
+
+La sintaxis del método map() es la siguiente:
+arr.map(function(element, index, array){  }, this);
+
+La function() callback es llamada en cada elemento del arreglo, y el método map() siempre le pasa el element actual, el index del
+elemento actual y el objeto array completo.
+
+El argumento this se utilizará dentro de la función callback. Por defecto, su valor es undefined. Por ejemplo, aquí está cómo
+cambiar el valor de this al número 80:
+
+let arr = [2, 3, 5, 7]
+
+arr.map(function(element, index, array){
+	console.log(this) // 80
+}, 80);
+
+También puedes probar los otros argumentos usando console.log() si te interesai, por ejemplo:
+
+let arr = [2, 3, 5, 7]
+
+arr.map(function(element, index, array){
+    console.log(element);
+    console.log(index);
+    console.log(array);
+    return element;
+}, 80);
+
+Lo anterior devolvera:
+
+2  //element
+0  //index o posicion
+[2, 3, 5, 7]  //array completo
+
+3  //element
+1  //index o pasicion
+[2, 3, 5, 7]  //array completo
+
+5  //element
+2  //index o posicion
+[2, 3, 5, 7]  //array completo
+
+7  //element
+3  //index o posicion
+[2, 3, 5, 7]  //array completo
+
+
+Y eso es todo lo que necesitas saber sobre el método Array.map(). La mayoría de las veces, solo utilizarás el argumento del element
+dentro de la función callback, ignorando el resto. Eso es lo que suelo hacer en mis proyectos diarios :)
+
+Gracias por leer este tutorial
+
+
+URL pagina web de consulta:
+https://www.freecodecamp.org/espanol/news/javascript-map-como-utilizar-la-funcion-js-map-metodo-de-arreglo/
+

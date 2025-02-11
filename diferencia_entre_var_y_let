@@ -1,0 +1,13 @@
+DIFERENCIA ENTRE VAR Y LET
+
+Si se declara una variable con la palabra "var" esa variables sera de ambito global, en cambio cuando se declara una variable con la
+palabra "let" sera una variable de ambito de bloque.
+
+var: genera variables globales
+let: genera variables de bloque
+
+Si se declara una variable con "var" se va a guardar en el objeto "window" que representa el objeto global de JavaScript dentro del
+navegador y eso es una mala practica, en cambio si se declara una variable con "let" no se va a quedar en el objeto window.
+
+NO HAY QUE USAR "var" PORQUE ES UNA MALA PRACTICA, HAY QUE USAR "let"
+

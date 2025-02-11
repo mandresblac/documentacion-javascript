@@ -1,0 +1,40 @@
+El método Object.keys() devuelve las claves de la propiedades de un objeto, ejemplo:
+
+// Objeto capitalesPaises
+const capitalesPaises = {
+    "España": "Madrid",
+    "Francia": "Paris",
+    "Inglaterra": "Londres",
+    "Portugal": "Lisboa",
+    "Grecia": "Atenas",
+    "Canada": "Otawa",
+    "Italia": "Roma",
+	"Peru": Lima,
+	"Argentina": "Buenos Aires"
+}
+
+console.log(Object.keys(capitalesPaises));
+//Salida
+(9) ['España', 'Francia', 'Inglaterra', 'Portugal', 'Grecia', 'Canada', 'Italia', 'Peru', 'Argentina']
+
+
+Agregando la propiedad .length devolvera el número de claves que tiene el objeto (que para este caso son 9), ejemplo:
+
+console.log(Object.keys(capitalesPaises).length);
+//Salida
+9
+
+
+El método Object.values() devuelve los valores de las claves de un objeto, ejemplo:
+
+console.log(Object.values(capitalesPaises));
+//salida
+(9) ['Madrid', 'Paris', 'Londres', 'Lisboa', 'Atenas', 'Otawa', 'Roma', 'Lima', 'Buenos Aires']
+
+
+ Agregando la propiedad .length devolvera el número de valores que tiene el objeto (que para este caso son 9), ejemplo:
+
+console.log(Object.values(capitalesPaises).length);
+//salida
+9
+

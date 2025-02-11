@@ -1,0 +1,13 @@
+Para mostrar textos en la consola Javascript existen varias formas (o funciones):
+
+Función	                            Descripción
+
+console.log()	Muestra la información proporcionada en la consola Javascript.
+console.info()	Equivalente al anterior. Se utiliza para mensajes de información.
+console.warn()	Muestra información de advertencia. Aparece en amarillo. errores leves.
+console.error()	Muestra información de error. Aparece en rojo. errores graves.
+console.table() Muestra los datos como una tabla. Debe ser un array o un objeto.
+console.clear()	Limpia la consola. Equivalente a pulsar CTRL+L o escribir clear().
+console.count() Registra el número de veces que se llama a count(). Esta función toma como argumento opcional una etiqueta.
+console.assert() Se usa para hacer pequeñas pruebas basicas.
+

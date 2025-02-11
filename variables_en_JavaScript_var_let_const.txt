@@ -1,0 +1,18 @@
+VARIABLES
+
+Podemos comprender fácilmente el concepto de una “variable” si nos la imaginamos como una “caja” con una etiqueta de nombre único
+pegada en ella.
+
+Por ejemplo, podemos imaginar la variable message como una caja etiquetada "message" con el valor "Hola!" adentro.
+
+Podemos declarar variables para almacenar datos al utilizar las palabra clave var, let, o const.
+
+- var: Es una declaración de variable más vieja-escuela. Normalmente no lo utilizamos en absoluto, aunque cubriremos sus sutiles
+  diferencias con let en el capítulo La vieja "var", en caso de que sea necesario, ya no se recomienda usar var, ya no se
+  recomienda usar var.
+- let: Es una declaración de variable moderna, utilizamos let cuando tengamos variables que sepamos que su contenido va a cambiar.
+- const: Utilizamos const cuando tengamos variables que no vayan a cambiar de valor durante el flujo de nuestra aplicación.
+  Las constantes se deben inicializar o se producirá un error al ejecutar código.
+
+Las variables deben ser nombradas de tal manera que entendamos fácilmente lo que está en su interior.
+

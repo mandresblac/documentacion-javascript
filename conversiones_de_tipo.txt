@@ -1,0 +1,37 @@
+Las tres conversiones de tipo más usadas son a string, a número y a boolean.
+
+ToString:
+Ocurre cuando se muestra algo. Se puede realizar con String(value). La conversión a string es usualmente obvia para los valores
+primitivos.
+------------------------------------------------------------------------------------------------------------------------------------
+
+ToNumber:
+Ocurre en operaciones matemáticas. Se puede realizar con Number(value).
+
+La conversión sigue las siguientes reglas:
+
+Valor			Se convierte en…
+undefined		NaN
+null			0
+true / false	1 / 0
+string			El string es leído “como es”, los espacios en blanco tanto al inicio como al final son ignorados. Un string vacío
+				se convierte en 0. Un error entrega NaN.
+------------------------------------------------------------------------------------------------------------------------------------
+
+ToBoolean:
+Ocurren en operaciones lógicas. Se puede realizar con Boolean(value).
+
+Sigue las siguientes reglas:
+
+Valor								Se convierte en…
+0, null, undefined, NaN, ""			false
+cualquier otro valor				true
+
+La mayoría de estas reglas son fáciles de entender y recordar. Las excepciones más notables donde la gente suele cometer errores son:
+
+undefined es NaN como número, no 0.
+"0" y textos que solo contienen espacios como " " son true como boolean.
+
+Los objetos no son cubiertos aquí. Volveremos a ellos más tarde en el capítulo Conversión de objeto a valor primitivo que está
+dedicado exclusivamente a objetos después de que aprendamos más cosas básicas sobre JavaScript.
+

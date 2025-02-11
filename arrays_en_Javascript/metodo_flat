@@ -1,0 +1,66 @@
+El metodo flap se introdujo en ES2019 y se utiliza para aplanar una matriz, para reducir el anidamiento de
+una matriz.
+Este método que crea una nueva matriz con todos los elementos de las subarreglos concatenados recursivamente
+hasta una profundidad específica.
+
+A continuación se muestra la sintaxis del flat()método:
+
+let newArray = arrayObject.flat([depth])
+
+El depthparámetro especifica qué tan profundo el método aplana la estructura de la matriz. El valor predeterminado es 1.
+
+El siguiente ejemplo muestra cómo aplanar una matriz de números:
+
+const numbers = [1, 2, [3, 4, 5]];
+const flatNumbers = numbers.flat();
+
+console.log(flatNumbers);
+
+Salida:
+[1, 2, 3, 4, 5]
+
+En este ejemplo, no pasamos el argumento de profundidad al flat()método, por lo que la profundidad es 1 de
+forma predeterminada. El flat()método concatenó todos los elementos de la matriz anidada [3,4,5] a los
+elementos de la nueva matriz.
+
+Tenga en cuenta que el método flat() crea una nueva matriz y no cambia la matriz original:
+
+console.log(numbers);
+
+Salida:
+[ 1, 2, [ 3, 4, 5 ] ]
+
+El siguiente ejemplo aplana una matriz con dos niveles de profundidad:
+
+const numbers = [1, 2, [3, 4, 5, [6, 7]]];
+const flatNumbers = numbers.flat(2);
+
+console.log(flatNumbers);
+
+Salida:
+[1, 2, 3, 4, 5, 6, 7]
+
+Cuando no conoce el nivel de profundidad, puede pasar el Infinitymétodo flat()para concatenar recursivamente
+todos los elementos de los subconjuntos en el nuevo conjunto:
+
+const numbers = [1, 2, [3, 4, 5, [6, 7, [8, 9]]]];
+const flatNumbers = numbers.flat(Infinity);
+
+console.log(flatNumbers);
+
+Si una matriz tiene ranuras vacías, puede usar el flat()método para eliminar los agujeros, así:
+
+const numbers = [1, 2, , 4, , 5];
+const sequence = numbers.flat();
+
+console.log(sequence);
+
+Salida:
+[ 1, 2, 4, 5 ]
+
+
+Resumen
+- Utilice el Array.prototype.flat()método para aplanar una matriz con las matrices anidadas.
+- Utilice el depthargumento para especificar la profundidad a la que se deben aplanar las matrices anidadas.  La profundidad es 1 por defecto.
+- También flat()elimina los agujeros en la matriz con ranuras vacías.
+

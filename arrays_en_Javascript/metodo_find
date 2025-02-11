@@ -1,0 +1,291 @@
+Cuando trabajas con una colección de arreglos, a veces sólo necesitas saber si un elemento existe en el arreglo para poder extraerlo.
+Y no te importará saber cuántos otros elementos (si es que hay alguno) existen dentro del mismo arreglo.
+
+Pues bien, podemos utilizar el método find() para hacer precisamente eso.
+
+
+
+CÓMO FUNCIONA EL MÉTODO ARRAY.FIND()
+El método find() es un método de Array.prototype (también conocido como incorporado) que toma una función de callback y llama a esa función para cada elemento que recorre dentro del arreglo al que está vinculado.
+
+Cuando encuentra una coincidencia (en otras palabras, la función callback devuelve true), el método devuelve ese elemento particular
+del arreglo e inmediatamente rompe el bucle. Así que el método find() devuelve el primer elemento dentro de un arreglo que satisface
+la función callback.
+
+La función callback puede tomar los siguientes parámetros:
+
+- currentItem: Es el elemento del arreglo sobre el que se está iterando actualmente.
+- index: Esta es la posición de índice de currentItem dentro del arreglo.
+- array: Representa el arreglo de destino junto con todos sus elementos.
+
+
+
+CÓMO UTILIZAR EL MÉTODO FIND() EN JAVASCRIPT
+En los siguientes ejemplos, demostraré cómo se puede utilizar el método find() para recuperar el primer elemento de una matriz que
+coincida con una condición especifica en JavaScript.
+
+
+
+CÓMO OBTENER UN SOLO ELEMENTO CON FIND()
+Supongamos que tienes un perro que se ha perdido. Lo denuncias a las autoridades competentes y estas reúnen a un grupo de perros
+recuperados.
+
+Para poder encontrar a tu perro, necesitas proporcionar información única sobre él. Por ejemplo, la raza de su perro (un chihuahua)
+puede servir para identificarlo.
+
+Podemos expresar este escenario en JavaScript utilizando una colección de arreglos. El arreglo llamado perrosEncontrados contendrá
+todos los nombres de los perros recuperados, así como sus respectivas razas. Y utilizaremos el método find() para encontrar el perro
+que es un chihuahua desde dentro del arreglo.
+
+let perrosEncontrados = [{
+    breed: "Beagle",
+    color: "blanco"
+  },
+
+  {
+    raza: "Chihuahua",
+    color: "amarillo"
+  },
+
+  {
+    breed: "Pug",
+    color: "negro"
+  },
+]
+
+function encuentraMiPerro(perro) {
+  return perro.raza === "Chihuahua"
+}
+
+let miPerro = perrosEncontrados.find(perro => encuentraMiPerro(perro));
+
+console.log(miPerro);
+
+
+/*
+
+{
+  raza: "Chihuahua",
+  color: "amarillo"
+}
+
+*/
+
+
+El método find() deja de iterar cuando se encuentra una coincidencia.
+
+Hay algo muy importante que hay que recordar sobre find(): deja de ejecutarse una vez que la función callback devuelve una
+declaración como true.
+
+Para ilustrar esto, utilizaremos de nuevo el ejemplo del perro perdido. Esta vez, supondremos que se han encontrado dos chihuahuas.
+
+Pero el método find() sólo devolverá la primera instancia de Chihuahua que descubra dentro del arreglo. Cualquier otra instancia
+será ignorada posteriormente.
+
+También podemos ver esto fácilmente registrando la posición del índice de ese elemento en la consola:
+
+let perrosEncontrados = [{
+    raza: "Beagle",
+    color: "blanco"
+  },
+
+  {
+    raza: "Chihuahua",
+    color: "amarillo"
+  },
+
+  {
+    raza: "Pug",
+    color: "negro"
+  },
+
+  {
+    raza: "Chihuahua",
+    color: "amarillo"
+  }
+]
+
+
+function encuentraMiPerro(perro, indice) {
+  if (perro.raza === "Chihuahua") console.log(indice);
+  return perro.raza === "Chihuahua"
+}
+
+
+let miPerro = encuentraPerros.find((perro, indice) => encuentraMiPerro(perro, indice));
+
+
+console.log(miPerro);
+
+/*
+1
+
+{
+  raza: "Chihuahua",
+  color: "amarillo"
+}
+
+*/
+
+
+
+CÓMO UTILIZAR UNA ASIGNACIÓN DE DESESTRUCTURACIÓN
+Puede hacer que su código sea más conciso combinando la asignación de desestructuración y una expresión de función de flecha.
+
+Utilizaremos la desestructuración para extraer sólo la propiedad nombré del objeto que luego pasaremos como parámetro a la función
+callback.
+
+Obtendremos el mismo resultado:
+
+let perrosEncontrados = [
+  {
+    raza: "Beagle",
+    color: "blanco"
+  },
+
+  {
+    raza: "Chihuahua",
+    color: "amarillo"
+  },
+
+  {
+    raza: "Pug",
+    color: "negro"
+  },
+]
+
+
+
+
+let miPerro = perrosEncontrados.find(({raza}) => raza === "Chihuahua");
+
+console.log(miPerro);
+
+/*
+
+{
+  raza: "Chihuahua",
+  color: "amarillo"
+}
+
+*/
+
+
+
+CÓMO ENCONTRAR UN ELEMENTO POR SU ÍNDICE
+En este ejemplo, encontraremos y devolveremos el punto perteneciente a 'David' desde dentro del arreglo utilizando su valor de
+índice único. Esto demuestra una de las formas en que podemos utilizar la propiedad index dentro de nuestra función callback con el
+método find():
+
+let posicionesReservadas = [{
+    nombre: "Ana",
+    edad: 24
+  },
+
+  {
+    nombre: "Beth",
+    edad: 22
+  },
+
+  {
+    nombre: "Cara",
+    edad: 25
+  },
+
+  {
+    nombre: "David",
+    edad: 30
+  },
+
+  {
+    nombre: "Ethan",
+    edad: 26
+  }
+]
+
+
+function encontrarPorIndice(persona, indice) {
+  return indice === 3
+}
+
+
+let miPosicion = posicionesReservadas.find((persona, indice) => encontrarPorIndice(persona, indice));
+
+console.log(miPosicion);
+
+/*
+{
+  edad: 30,
+  nombre: "David"
+}
+*/
+
+
+
+PUEDE UTILIZAR EL OBJETO DE CONTEXTO CON FIND()
+Además de la función callback, el método find() también puede tomar un objeto de contexto.
+
+find(callback, objetoContexto)
+
+Podemos entonces referirnos a este objeto desde dentro de la función callback en cada iteración, utilizando la palabra clave this
+como referencia. Esto nos permite acceder a cualquier propiedad o método definido dentro del objeto de contexto.
+
+
+
+CÓMO UTILIZAR EL OBJETO DE CONTEXTO CON FIND()
+Digamos que tenemos una matriz de solicitudes de empleo y queremos seleccionar sólo el primer solicitante que cumpla todos los
+criterios.
+
+Todos los criterios se definen dentro de un objeto de contexto llamado criterios y ese objeto se pasa posteriormente como segundo
+parámetro al método find(). Luego, desde la función callback, accedemos al objeto para comprobar si un candidato cumple con todos
+los criterios allí especificados.
+
+let candidatos = [
+    {nombre: "aaron", añosDeExperiencia: 18, edad: 66},
+    {nombre: "beth", añosDeExperiencia:  0, edad: 18},
+    {nombre: "cara", añosDeExperiencia: 4, edad: 22},
+    {nombre: "daniel", añosDeExperiencia: 3, edad: 16},
+    {nombre: "ella", añosDeExperiencia: 5, edad: 25},
+    {nombre: "fin", añosDeExperiencia: 0, edad: 16},
+    {nombre: "george", añosDeExperiencia: 6, edad: 28},
+]
+
+let criterios = {
+  experienciaMinima: 3,
+  edadMinima: 18,
+  edadMaxima: 65
+}
+
+
+let candidatoSuertudo = candidatos.find(function(candidato) {
+	return candidato.añosDeExperiencia >= this.experienciaMinima && candidato.edad <= this.edadMaxima && candidato.edad >= this.edadMinima ;
+}, criterios)
+
+console.log(candidatoSuertudo);
+
+/*
+{
+  edad: 22,
+  nombre: "cara",
+  añosDeExperiencia: 4
+}
+*/
+
+Técnicamente, los tres candidatos (Cara, Ella y George) cumplen los criterios. Es decir, los tres tienen al menos 18 años, no son
+mayores de 65 y tienen al menos 3 años de experiencia laboral.
+
+Sin embargo, como el método find() siempre devuelve SOLO la primera instancia que se evalúa como verdadera, las otras dos serán
+ignoradas y el bucle se romperá.
+
+
+
+EN CONCLUSIÓN
+El método find() es un método de Array.prototype que toma una función de callback y llama a esa función para cada elemento dentro
+del arreglo delimitado.
+
+Cuando la función callback se evalúa como true, el método devuelve el elemento actual y rompe el bucle. Devuelve sólo la primera
+coincidencia - cualquier otra coincidencia presente dentro de la matriz será ignorada.
+
+En adición de la función callback, el método find() también puede tomar un objeto de contexto como segundo argumento. Esto te
+permitirá acceder a cualquiera de sus propiedades desde la función callback usando this.
+

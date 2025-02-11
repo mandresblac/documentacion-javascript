@@ -1,0 +1,44 @@
+ELIJA UN VALOR ALEATORIO DE UN ARRAY UTILIZANDO LA FUNCIÓN MATH.RANDOM() EN JAVASCRIPT
+
+Podemos elegir un valor de un array dado usando su índice en JavaScript. Para elegir un valor aleatorio de un array dado, necesitamos generar
+un índice aleatorio en el rango de 0 a la longitud del array. Podemos generar un valor aleatorio usando la función Math.random() y para
+establecer el rango de este valor aleatorio, tenemos que multiplicarlo por la longitud del array que podemos obtener usando la función length.
+
+El valor aleatorio generado por la función Math.random() es un valor de punto flotante. Para convertir el valor de punto flotante a entero,
+tenemos que usar la función Math.floor(). La función Math.floor() convierte un número de punto flotante en un entero que será menor que el
+número dado. Por ejemplo, creemos un array de cinco valores, escojamos un valor aleatorio y lo mostraremos en la consola. Vea el código a
+continuación.
+
+
+var myArray = ['one', 'two', 'three', 'four', 'five'];
+var rand = Math.floor(Math.random()*myArray.length);
+var rValue = myArray[rand];
+console.log(rValue)
+
+//Salida
+two
+
+En el código anterior, el índice aleatorio se almacenará en la variable rand, y usando este índice podemos elegir un valor aleatorio del array
+que se almacenará en la variable rValue.
+
+
+
+EL CODIGO ANTERIOR SE PUEDE CONDENSAR EN LA SIGUIENTE FUNCION:
+
+function mostrarValorAleatorio(arreglo) {
+  let aleatorio = Math.floor(Math.random() * arreglo.length);
+  let valorAleatorio = arreglo[aleatorio];
+
+  return valorAleatorio;
+}
+
+//Salida
+two
+
+
+console.log(mostrarValorAleatorio(myArray))
+
+
+
+URL sitio web de consulta: https://www.delftstack.com/es/howto/javascript/javascript-pick-random-from-array/
+

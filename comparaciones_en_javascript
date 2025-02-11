@@ -1,0 +1,5 @@
+COMPARACIONES EN JAVASCRIPT
+
+dos iguales   ==   Solo compara el valor.
+tres iguales  ===  Compara ano el valor como el tipo de dato.
+

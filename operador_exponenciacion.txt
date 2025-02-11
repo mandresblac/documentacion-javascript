@@ -1,0 +1,13 @@
+Exponenciación **
+El operador de exponenciación ** es una inclusión reciente al lenguajei JavaScript.
+
+Por ejemplo:
+
+alert( 2 ** 2 ); // 4  (2 * 2)
+alert( 2 ** 3 ); // 8  (2 * 2 * 2)
+alert( 2 ** 4 ); // 16 (2 * 2 * 2 * 2)
+
+Matemáticamente, la exponenciación es definida para números no enteros también, Por ejemplo la raíz cuadrada es el exponente 1/2:
+alert( 4 ** (1/2) ); // 2 (potencia de 1/2 es lo mismo que raíz cuadrada, eso es matemáticas)
+alert( 8 ** (1/3) ); // 2 (potencia de 1/3 es lo mismo que raíz cúbica)
+

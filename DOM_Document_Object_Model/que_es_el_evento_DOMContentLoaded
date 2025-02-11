@@ -1,0 +1,18 @@
+El evento DOMContentLoaded ocurre en el objeto document (debemos usar addEventListener para capturarlo), este nos permite conocer el momento
+en el que todos los elementos del DOM, es decir, los elementos HTML de un proyecto, están cargados. En este sentido, DOMContentLoaded funciona
+de manera similar al evento click o cualquier evento, pues nos permite conocer el momento en el que sucede algo en nuestro proyecto.
+
+
+El evento DOMContentLoaded  espera que se construya el DOM por completo, es decir los elementos HTML, antes de ejecutar la etiqueta
+<script src=""> que es la que llama al archivo (o los archivos) de Javascript que ejecutan la logica de programación.
+
+
+DOMContentLoaded traduce a "Cuando el contenido del DOM de halla cargado" o "Cargar el conrenido del DOM", luego de que se halla cargado
+ejecuta lo que esta dentro de la funcion, ejemplo:
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Esto funciona");
+  const h1 = document.querySelector("h1");
+  console.log(h1);
+});
+

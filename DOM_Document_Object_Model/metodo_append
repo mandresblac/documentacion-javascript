@@ -1,0 +1,40 @@
+El método .append() nos permite adjuntar un objeto nodo o un DOMString después del último elemento hijo del elemento padre.
+Dicho de otra forma, podremos añadir dentro de un elemento padre (un div, un parrafo,etc) otro nuevo elemento o una cadena de texto.
+
+Ejemplo 1:
+En el siguiente ejemplo, vamos a declarar un elemento padre y un elemento hijo, y adjuntaremos el hijo al padre.
+
+let padre = document.createElement('div');
+let hijo = document.createElement('p');
+padre.append(hijo);
+
+Lo anterior adjuntará el elemento 'hijo' al elemento 'padre'. El resultado en nuestro documento será:
+<div>
+	<p></p>
+</div>
+
+
+Ejemplo 2:
+Si posteriormente decidimos añadir un segundo hijo este se agregará detrás de cualquier otro elemento dentro del padre:
+
+let hijo2 = document.createElement('span');
+padre.append(hijo2);
+
+El resultado en nuestro documento será:
+<div>
+	<p></p>
+	<span></span>
+</div>
+
+Si el elemento padre ya dispone de un elemento hijo, al usar el método .append(), el nuevo hijo se añadirá después del elemento hijo
+original como podemos ver en el segundo ejemplo arriba.
+
+
+Así mismo, como comentábamos anteriormente también podremos adjuntar un DOMString (Básicamente, una cadena de texto) así:
+
+// Adjuntando un DOMString
+let padre = document.createElement('div');
+padre.append('Un sencillo texto');
+
+El resultado en nuestro documento será: <div>Un sencillo texto</div>
+
